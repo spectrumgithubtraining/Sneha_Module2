@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .login-container h2 {
+            margin-bottom: 20px;
+        }
+
+        .login-form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .login-form label {
+            margin-bottom: 8px;
+        }
+
+        .login-form input {
+            padding: 10px;
+            margin-bottom: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .login-form button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .login-form button:hover {
+            background-color: #45a049;
+        }
+
+        .login-form p {
+            margin-top: 16px;
+            color: #555;
+        }
+    </style>
+
+    <script>
+
+        function loginValidate() {
+
+            var username = document.loginform.username.value;
+            var password = document.loginform.password.value;
+
+
+
+
+            var usernamePattern = /^(?=.*[@$])[a-zA-Z0-9@$]{1,12}$/;
+            var strongPasswordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+
+
+            if (username === "") {
+                alert("Please enter username")
+                document.getElementById("username").focus();
+                return false;
+            }
+
+            else if (!usernamePattern.test(username)) {
+                alert("Invalid username format")
+                document.getElementById("username").focus();
+
+                return false
+            }
+            else if (password === "") {
+                alert("Please enter password")
+                document.getElementById("password").focus();
+                return false;
+            }
+            else if (!strongPasswordPattern.test(password)) {
+                alert("Password is not strong")
+                document.getElementById("password").focus();
+
+                return false
+            }
+
+            return true;
+
+
+        }
+
+    </script>
+
+
+
+</head>
+
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form class="login-form" action="home.html" method="" name="loginform" onsubmit="return loginValidate()">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username">
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password">
+
+            <button type="submit">Login</button>
+        </form>
+        <p>Don't have an account? <a href="">Sign up</a></p>
+    </div>
+</body>
+
+</html>

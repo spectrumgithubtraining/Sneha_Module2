@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlexSlider Example</title>
+    
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <!-- Include FlexSlider CSS and JavaScript -->
+    <link rel="stylesheet" href="https://www.stepskochi.com/js/flexslider/flexslider.css" type="text/css" media="screen" />
+    <script type="text/javascript" src="https://www.stepskochi.com/js/jquery.flexslider-min.js"></script>
+
+    <style>
+img{
+    width: 400px;
+    height: 400px;
+}    </style>
+
+    <script>
+        // Initialize FlexSlider on document ready
+        $(document).ready(function () {
+            $('.flexslider').flexslider({
+                animation: 'slide', // Choose the animation type: fade or slide
+                slideshowSpeed: 3000, // Set the speed of the slideshow in milliseconds
+                animationSpeed: 600, // Set the speed of animations in milliseconds
+                controlNav: true, // Show navigation controls
+                directionNav: true, // Show previous/next arrows
+                pauseOnHover: true // Pause the slideshow when hovering over slider
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="flexslider">
+        <ul class="slides">
+            <li>
+                <img src="images/apples.jpg" alt="Image 1">
+            </li>
+            <li>
+                <img src="images/orange-white-white.jpg" alt="Image 2">
+            </li>
+            <li>
+                <img src="images/form_bg.jpg" alt="Image 3">
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>
